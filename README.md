@@ -92,7 +92,7 @@ Order within groups depends on input order; group order depends on hash map iter
 - A map groups words by this signature.
 - The program prints the grouped lists.
 
-Time complexity per word is approximately \(O(k \log k)\) for sorting, where \(k\) is word length. (Find more about performance in the [Design Decisions file](docs/manual.pdf))
+Time complexity per word is approximately \(O(k \log k)\) for sorting, where \(k\) is word length. (Find more about performance in [Design Decisions](docs/Design Decisions.pdf))
 
 ---
 
