@@ -3,6 +3,9 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.*;
 
+/**
+ * AnagramFinder reads a .txt file and groups words that are anagrams.
+ */
 public class AnagramFinder {
 
     // Map to store sorted signature as key and list of words as value
@@ -19,20 +22,24 @@ public class AnagramFinder {
         } catch (IOException e) { e.printStackTrace(); }
     }
 
-    private static String toSignature(String s) {
-        char[] chars = s.toCharArray();
+    /**
+     * Generates a sorted character signature for a string.
+     *
+     * @param word Input string
+     * @return Sorted characters as a string
+     */
+    private static String toSignature(String word) {
+        char[] chars = word.toCharArray();
         Arrays.sort(chars);
         return new String(chars);
     }
 
+    /**
+     * Prints all groups of anagrams.
+     */
     private static void printDict(Map<String, List<String>> dict) {
-        for (Map.Entry<String, List<String>> entry : dict.entrySet()) {
-            String key = entry.getKey();
-            List<String> values = entry.getValue();
-            for (String val : values) {
-                System.out.print(val + " ");
-            }
-            System.out.println();
+        for (List<String> values : dict.values()) {
+            System.out.println(String.join(" ", values));
         }
     }
 
